@@ -1,0 +1,24 @@
+{
+  "name": "automaton-v30",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/BurhanH/automaton-v30#readme",
+  "bugs": {
+    "url": "https://github.com/BurhanH/automaton-v30/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BurhanH/automaton-v30.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "cypress:open": "cypress open"
+  },
+  "dependencies": {
+    "cypress": "^14.4.0"
+  }
+}
