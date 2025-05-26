@@ -1,14 +1,19 @@
 # automaton-v30
 
-This project is a Cypress testing framework designed to run end-to-end tests for web applications. Users can define and execute automated tests to ensure the quality and functionality of their web projects.
+This project is a Cypress testing framework designed to run end-to-end tests for web applications. Users can define and execute automated tests to ensure the quality and functionality of their web applications through automated browser testing.
+
+## Recent Updates
+- Added BDD Cucumber integration planning and documentation
+- Enhanced project documentation with detailed structure and contribution guidelines
+- Implemented initial Cypress testing framework setup
 
 ## Project Structure
 
 *   `cypress/`: This directory contains all the Cypress test-related files.
     *   `e2e/`: Holds the end-to-end test specifications (e.g., `spec.cy.js`). These files contain the actual test scripts that simulate user interactions with the application.
-    *   `support/`: Contains reusable custom commands and global configurations that can be used across different test files. `commands.js` is a common place to define custom Cypress commands, and `e2e.js` is run before every spec file.
+    *   `support/`: Contains reusable custom commands and global configurations that can be used across different test files. `commands.js` is a common place to define custom Cypress commands, and other global configuration settings.
 *   `.github/workflows/`: This directory contains GitHub Actions workflow configurations.
-    *   `cypress-test.yml`: Defines a workflow that automatically runs the Cypress tests, likely on every push or pull request to the repository. This helps in continuous integration by ensuring tests pass before code changes are merged.
+    *   `cypress-test.yml`: Defines a workflow that automatically runs the Cypress tests, likely on every push or pull request to the repository. This helps in continuous integration by ensuring tests pass before code is merged.
 *   `cypress.config.js`: This is the main configuration file for Cypress. It allows you to customize various aspects of the Cypress test runner, such as base URL, viewport size, and environment variables.
 *   `package.json`: Defines the project's metadata, including dependencies (like Cypress), and scripts for managing and running the project (e.g., `npm install`, test scripts).
 *   `package-lock.json`: Records the exact versions of dependencies used in the project, ensuring consistent installations across different environments.
@@ -65,7 +70,11 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 
 Please ensure your code adheres to any existing style guidelines and that your changes are well-tested.
 
-## TODOS
+## Upcoming Features
 
-[BBD Cucumber](https://github.com/badeball/cypress-cucumber-preprocessor)
-[Cucumber Recipe](https://filiphric.com/cucumber-in-cypress-a-step-by-step-guide)
+The following features are planned for implementation:
+
+1. **BDD with Cucumber Integration**
+   - Implementation planned using [cypress-cucumber-preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor)
+   - Following the [Cucumber implementation guide](https://filiphric.com/cucumber-in-cypress-a-step-by-step-guide)
+   - This will enable behavior-driven development practices in our testing framework
