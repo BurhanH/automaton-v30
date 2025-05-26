@@ -2,6 +2,34 @@
 
 This project is a Cypress testing framework designed to run end-to-end tests for web applications. Users can define and execute automated tests to ensure the quality and functionality of their web applications through automated browser testing.
 
+```mermaid
+graph TD
+    A[Developer / CI Pipeline] -->|Runs tests| B[Cypress Test Runner]
+    B --> C1[Cypress e2e Specs]
+    B --> C2[Support Files & Custom Commands]
+    B --> D[Cypress Config (cypress.config.js)]
+    B --> E[Project Dependencies (package.json)]
+    B --> F[GitHub Actions Workflow (.github/workflows/cypress-test.yml)]
+    C1 -->|API & UI Test Execution| G[Target Web Application / Mock API]
+    F -->|On push/PR| B
+
+    subgraph "Repository Structure"
+      C1[cypress/e2e/]
+      C2[cypress/support/]
+      D[cypress.config.js]
+      E[package.json]
+      F[.github/workflows/]
+    end
+```
+
+**Legend:**
+- **Cypress Test Runner**: Runs the tests in the `cypress/e2e` directory.
+- **Support Files**: Custom commands and hooks in `cypress/support`.
+- **Configuration**: Centralized options in `cypress.config.js`.
+- **Dependencies**: Listed in `package.json`.
+- **CI Integration**: Automated by `.github/workflows/cypress-test.yml`.
+- **Test Target**: The web application or API under test.
+
 ## Recent Updates
 - Added BDD Cucumber integration planning and documentation
 - Enhanced project documentation with detailed structure and contribution guidelines
