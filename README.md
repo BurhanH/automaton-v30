@@ -2,23 +2,27 @@
 
 This project is a Cypress testing framework designed to run end-to-end tests for web applications. Users can define and execute automated tests to ensure the quality and functionality of their web applications through automated browser testing.
 
+## Architecture Diagram
+
+Below is a high-level architecture diagram showing the main components and their interactions in this Cypress testing framework:
+
 ```mermaid
 graph TD
-    A[Developer / CI Pipeline] -->|Runs tests| B[Cypress Test Runner]
-    B --> C1[Cypress e2e Specs]
-    B --> C2[Support Files & Custom Commands]
-    B --> D[Cypress Config (cypress.config.js)]
-    B --> E[Project Dependencies (package.json)]
-    B --> F[GitHub Actions Workflow (.github/workflows/cypress-test.yml)]
-    C1 -->|API & UI Test Execution| G[Target Web Application / Mock API]
-    F -->|On push/PR| B
+    DEV[Developer / CI Pipeline] -->|Runs tests| CYPRESS[Cypress Test Runner]
+    CYPRESS --> E2E[Cypress e2e Specs]
+    CYPRESS --> SUPPORT[Support Files and Custom Commands]
+    CYPRESS --> CONFIG[Cypress Config]
+    CYPRESS --> PKG[Project Dependencies]
+    CYPRESS --> WORKFLOW[GitHub Actions Workflow]
+    E2E -->|API & UI Test Execution| TARGET[Target Web Application or Mock API]
+    WORKFLOW -->|On push/PR| CYPRESS
 
     subgraph "Repository Structure"
-      C1[cypress/e2e/]
-      C2[cypress/support/]
-      D[cypress.config.js]
-      E[package.json]
-      F[.github/workflows/]
+      E2E
+      SUPPORT
+      CONFIG
+      PKG
+      WORKFLOW
     end
 ```
 
