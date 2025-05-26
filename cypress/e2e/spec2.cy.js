@@ -62,4 +62,13 @@ describe('Sample Test Suite', function() {
     cy.log('Test 2 body');
     // Do some test actions here
   });
+
+  /*
+  it('does something on a secured page', function () {
+    const { username, password } = this.currentUser
+    cy.login(username, password)
+    // ...rest of test
+  });
+  */
+
 });

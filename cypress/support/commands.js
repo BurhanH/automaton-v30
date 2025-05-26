@@ -19,3 +19,34 @@
 
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+/*
+Cypress.Commands.add('login', (username, password) => {
+  cy.visit('/login')
+  cy.get('input[name=username]').type(username)
+  cy.get('input[name=password]').type(`${password}{enter}`, { log: false })
+  cy.url().should('include', '/dashboard')
+  cy.getCookie('your-session-cookie').should('exist')
+  cy.get('h1').should('contain', username)
+})
+*/
+
+/* This is an example of a Cypress command that uses sessions to cache the login state.
+Cypress.Commands.add('login', (username, password) => {
+  cy.session(
+    username,
+    () => {
+      cy.visit('/login')
+      cy.get('input[name=username]').type(username)
+      cy.get('input[name=password]').type(`${password}{enter}`, { log: false })
+      cy.url().should('include', '/dashboard')
+      cy.get('h1').should('contain', username)
+    },
+    {
+      validate: () => {
+        cy.getCookie('your-session-cookie').should('exist')
+      },
+    }
+  )
+})
+*/
